@@ -26,7 +26,6 @@
  </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col font-sans antialiased">
-
  <!-- Top Persistent Header -->
  <header class="sticky top-0 z-40 bg-white shadow-sm">
   <!-- Brand -->
@@ -42,7 +41,6 @@
       </button>
     </div>
   </div>
-
   <!-- Navigation -->
   <nav class="bg-slate-50 border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-center gap-2">
@@ -50,12 +48,10 @@
         <i class="fa-solid fa-plus-circle"></i>
         <span>Create</span>
       </button>
-
       <button onclick="router('documents')" class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5">
         <i class="fa-solid fa-folder-open"></i>
         <span>Saved Docs</span>
       </button>
-
       <button onclick="router('settings')" class="px-3.5 py-2 rounded-xl text-xs md:text-sm font-semibold bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 transition flex items-center gap-1.5" aria-label="Settings">
         <i class="fa-solid fa-gear"></i>
         <span class="hidden sm:inline">Settings</span>
@@ -63,10 +59,8 @@
     </div>
   </nav>
 </header>
-
  <!-- Main Content Container -->
  <main class="flex-grow max-w-7xl w-full mx-auto px-3 md:px-4 py-4 md:py-6">
-
  <!-- ================= PAGE 1: HOME / DASHBOARD ================= -->
  <div id="page-home" class="space-y-6 page-section">
  <div class="bg-white rounded-3xl p-6 md:p-16 shadow-sm border border-slate-200 text-center max-w-3xl mx-auto space-y-8 my-auto">
@@ -74,7 +68,6 @@
  <h1 class="text-2xl md:text-4xl font-black tracking-tight text-slate-900">Invoice & Quotation Generator</h1>
  <p class="text-slate-500 text-xs md:text-sm max-w-lg mx-auto">Create professional invoices or quotations instantly. Choose an option below to get started.</p>
  </div>
-
  <div class="flex flex-col sm:flex-row justify-center items-center gap-8 md:gap-16 py-4">
  <div class="flex flex-col items-center space-y-3">
  <button onclick="startNewDocument('INVOICE')" class="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-tr from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition duration-200 flex items-center justify-center text-4xl md:text-5xl focus:outline-none ring-4 ring-indigo-50">
@@ -82,7 +75,6 @@
  </button>
  <span class="font-bold text-slate-800 text-sm md:text-base">Create Invoice</span>
  </div>
-
  <div class="flex flex-col items-center space-y-3">
  <button onclick="startNewDocument('QUOTATION')" class="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-tr from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition duration-200 flex items-center justify-center text-4xl md:text-5xl focus:outline-none ring-4 ring-emerald-50">
  <i class="fa-solid fa-file-lines"></i>
@@ -92,7 +84,6 @@
  </div>
  </div>
  </div>
-
  <!-- ================= PAGE 2: SETTINGS PAGE ================= -->
  <div id="page-settings" class="space-y-6 page-section hidden max-w-4xl mx-auto">
  <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 space-y-2">
@@ -102,7 +93,6 @@
  </h2>
  <p class="text-xs md:text-sm text-slate-500">Manage your business profile, client directory, or backup/restore your data.</p>
  </div>
-
  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
  <!-- Temporary Browser Identity Card -->
  <div class="bg-indigo-50/70 p-6 rounded-3xl border border-indigo-100 space-y-3 md:col-span-2">
@@ -120,7 +110,6 @@
  <button onclick="copyUserId()" class="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold whitespace-nowrap transition shadow-sm">Copy ID</button>
  </div>
  </div>
-
  <button onclick="router('profile')" class="bg-white p-6 rounded-3xl border border-slate-200 hover:border-indigo-500 hover:shadow-lg transition text-left space-y-4 group">
  <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition flex items-center justify-center text-2xl">
  <i class="fa-solid fa-building"></i>
@@ -134,7 +123,6 @@
  <i class="fa-solid fa-arrow-right text-[10px]"></i>
  </div>
  </button>
-
  <button onclick="router('clients')" class="bg-white p-6 rounded-3xl border border-slate-200 hover:border-emerald-500 hover:shadow-lg transition text-left space-y-4 group">
  <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition flex items-center justify-center text-2xl">
  <i class="fa-solid fa-users"></i>
@@ -148,7 +136,6 @@
  <i class="fa-solid fa-arrow-right text-[10px]"></i>
  </div>
  </button>
-
  <button onclick="exportData()" class="bg-white p-6 rounded-3xl border border-slate-200 hover:border-amber-500 hover:shadow-lg transition text-left space-y-4 group">
  <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition flex items-center justify-center text-2xl">
  <i class="fa-solid fa-file-export"></i>
@@ -162,7 +149,6 @@
  <i class="fa-solid fa-download text-[10px]"></i>
  </div>
  </button>
-
  <button onclick="document.getElementById('import-file-input').click()" class="bg-white p-6 rounded-3xl border border-slate-200 hover:border-violet-500 hover:shadow-lg transition text-left space-y-4 group">
  <div class="w-14 h-14 rounded-2xl bg-violet-50 text-violet-600 group-hover:bg-violet-600 group-hover:text-white transition flex items-center justify-center text-2xl">
  <i class="fa-solid fa-file-import"></i>
@@ -179,7 +165,6 @@
  </button>
  </div>
  </div>
-
  <!-- ================= PAGE 2b: CLIENT MANAGEMENT PAGE ================= -->
  <div id="page-clients" class="space-y-6 page-section hidden max-w-4xl mx-auto">
  <div class="bg-white p-4 md:p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -197,7 +182,6 @@
  <span>Add New Client</span>
  </button>
  </div>
-
  <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden p-4">
  <div class="mb-4 relative">
  <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
@@ -212,7 +196,6 @@
  </div>
  </div>
  </div>
-
  <!-- CLIENT ADD/EDIT MODAL -->
  <div id="client-modal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4 hidden">
  <div class="bg-white rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl border border-slate-200">
@@ -251,7 +234,6 @@
  </div>
  </div>
  </div>
-
  <!-- ================= PAGE 3: COMPANY PROFILE ================= -->
  <div id="page-profile" class="space-y-6 page-section hidden max-w-4xl mx-auto">
  <div class="bg-white p-4 md:p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -269,7 +251,6 @@
  <span>Save Changes</span>
  </button>
  </div>
-
  <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 space-y-6">
  <div>
  <label class="block text-xs font-semibold text-slate-700 mb-2 uppercase tracking-wider">Company Logo</label>
@@ -283,7 +264,6 @@
  </div>
  </div>
  </div>
-
  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
  <div>
  <label class="block text-xs font-semibold text-slate-700 mb-1">Firm / Business Name *</label>
@@ -294,7 +274,6 @@
  <input type="text" id="profile-pan" placeholder="ABCDE1234F" class="w-full px-3.5 py-2.5 border rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500 uppercase">
  </div>
  </div>
-
  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
  <div>
  <label class="block text-xs font-semibold text-slate-700 mb-1">GSTIN Number</label>
@@ -305,17 +284,22 @@
  <input type="text" id="profile-phone" placeholder="+91 9876543210" class="w-full px-3.5 py-2.5 border rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500">
  </div>
  </div>
-
  <div>
  <label class="block text-xs font-semibold text-slate-700 mb-1">Full Business Address</label>
  <textarea id="profile-address" rows="3" placeholder="Office address, street, city, pin code..." class="w-full px-3.5 py-2.5 border rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
  </div>
-
  <div>
  <label class="block text-xs font-semibold text-slate-700 mb-1">Bank Account & Payment Details (Appears on Invoices)</label>
  <textarea id="profile-bank" rows="3" placeholder="Bank Name: HDFC Bank&#10;A/C No: 1234567890&#10;IFSC: HDFC0001234&#10;UPI ID: name@upi" class="w-full px-3.5 py-2.5 border rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm leading-relaxed"></textarea>
  </div>
-
+ <div>
+ <label class="block text-xs font-semibold text-slate-700 mb-1">Material Specifications (Appears on Invoices & Quotations)</label>
+ <textarea id="profile-material-specs" rows="3" placeholder="Enter standard material specifications..." class="w-full px-3.5 py-2.5 border rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm leading-relaxed"></textarea>
+ </div>
+ <div>
+ <label class="block text-xs font-semibold text-slate-700 mb-1">Footer Notes (Appears at the bottom of each invoice and quotation)</label>
+ <textarea id="profile-footer-notes" rows="3" placeholder="Enter standard footer notes or declarations..." class="w-full px-3.5 py-2.5 border rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 text-sm leading-relaxed"></textarea>
+ </div>
  <div class="flex justify-between items-center pt-4 border-t">
  <button onclick="router('settings')" class="px-5 py-2.5 rounded-xl border border-slate-300 font-medium text-slate-700 hover:bg-slate-100 text-sm">Cancel</button>
  <button onclick="saveProfile()" class="px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold shadow-sm text-sm flex items-center space-x-2">
@@ -325,7 +309,6 @@
  </div>
  </div>
  </div>
-
  <!-- ================= PAGE 4: WIZARD FORM ================= -->
  <div id="page-wizard" class="space-y-4 page-section hidden max-w-4xl mx-auto">
  <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-3">
@@ -341,7 +324,6 @@
  <div id="step-indicator-3" class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center text-xs md:text-sm">3</div>
  </div>
  </div>
-
  <div class="bg-white p-4 md:p-8 rounded-2xl shadow-sm border border-slate-200 space-y-6">
  <!-- STEP 1 -->
  <div id="wizard-step-1" class="wizard-step space-y-4 md:space-y-6">
@@ -363,7 +345,6 @@
  <input type="date" id="doc-due-date" class="w-full px-3 py-2.5 border rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
  </div>
  </div>
-
  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
  <div class="space-y-3">
  <h4 class="font-semibold text-slate-700 text-xs uppercase tracking-wider">Client Information</h4>
@@ -400,7 +381,6 @@
  </div>
  </div>
  </div>
-
  <!-- STEP 2 -->
  <div id="wizard-step-2" class="wizard-step space-y-4 md:space-y-6 hidden">
  <div class="flex justify-between items-center border-b pb-3">
@@ -415,14 +395,12 @@
  </div>
  <div id="items-container" class="space-y-3"></div>
  </div>
-
  <!-- STEP 3 -->
  <div id="wizard-step-3" class="wizard-step space-y-4 md:space-y-6 hidden">
  <h3 class="text-base md:text-lg font-bold text-slate-800 border-b pb-3 flex items-center space-x-2">
  <i class="fa-solid fa-calculator text-indigo-600"></i>
  <span>Taxes, Discounts & Final Summary</span>
  </h3>
-
  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
  <div class="space-y-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
  <h4 class="font-semibold text-slate-700 text-xs uppercase tracking-wider">Tax & Shipping Settings</h4>
@@ -458,8 +436,15 @@
  <label class="block text-xs font-medium text-slate-600 mb-1">Notes / Bank Terms</label>
  <textarea id="doc-notes" rows="2" placeholder="Payment terms, bank account details..." class="w-full px-3 py-2.5 border rounded-lg bg-white outline-none text-sm"></textarea>
  </div>
+ <div>
+ <label class="block text-xs font-medium text-slate-600 mb-1">Material Specifications</label>
+ <textarea id="doc-material-specs" rows="2" placeholder="Material specifications..." class="w-full px-3 py-2.5 border rounded-lg bg-white outline-none text-sm"></textarea>
  </div>
-
+ <div>
+ <label class="block text-xs font-medium text-slate-600 mb-1">Footer Notes</label>
+ <textarea id="doc-footer-notes" rows="2" placeholder="Footer notes..." class="w-full px-3 py-2.5 border rounded-lg bg-white outline-none text-sm"></textarea>
+ </div>
+ </div>
  <div class="bg-indigo-50/50 p-5 rounded-xl border border-indigo-100 flex flex-col justify-between space-y-4">
  <h4 class="font-bold text-indigo-900 text-xs uppercase tracking-wider">Calculation Summary</h4>
  <div class="space-y-2 text-xs md:text-sm">
@@ -492,20 +477,17 @@
  </div>
  </div>
  </div>
-
  <div class="flex flex-col sm:flex-row justify-between items-center gap-3 pt-4 border-t">
  <button onclick="cancelWizard()" class="w-full sm:w-auto px-5 py-3 rounded-xl border border-rose-300 font-semibold text-rose-600 hover:bg-rose-50 transition flex items-center justify-center space-x-2 text-sm order-3 sm:order-1">
  <i class="fa-solid fa-xmark"></i>
  <span>Cancel</span>
  </button>
-
  <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto order-2 sm:order-2">
  <button id="btn-prev" onclick="changeWizardStep(-1)" class="w-full sm:w-auto px-5 py-3 rounded-xl border border-slate-300 font-semibold text-slate-700 hover:bg-slate-100 transition hidden flex items-center justify-center space-x-2 text-sm">
  <i class="fa-solid fa-arrow-left"></i>
  <span>Back</span>
  </button>
  </div>
-
  <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto order-1 sm:order-3 sm:ml-auto">
  <button id="btn-next" onclick="changeWizardStep(1)" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold transition flex items-center justify-center space-x-2 shadow-sm text-sm">
  <span>Next Step</span>
@@ -521,10 +503,8 @@
  </button>
  </div>
  </div>
-
  </div>
  </div>
-
  <!-- ================= PAGE 5: FULL PAGE A4 PREVIEW ================= -->
  <div id="page-preview" class="space-y-4 page-section hidden">
  <div class="bg-white p-3 md:p-4 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-3 no-print max-w-[210mm] mx-auto">
@@ -543,7 +523,6 @@
  </button>
  </div>
  </div>
-
  <div class="flex justify-center overflow-x-auto py-2">
  <div id="printable-area" class="w-full max-w-[210mm] min-w-[320px] bg-white p-6 md:p-12 shadow-xl rounded-2xl border border-slate-200 space-y-6 md:space-y-8 text-slate-800 text-xs md:text-sm">
  <div class="flex flex-col sm:flex-row justify-between items-start border-b pb-6 gap-4">
@@ -564,7 +543,6 @@
  <p class="text-slate-500 text-xs mt-0.5" id="prev-due-box">Due Date: <span id="prev-doc-due"></span></p>
  </div>
  </div>
-
  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100">
  <div>
  <h4 class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Billed To:</h4>
@@ -578,7 +556,6 @@
  <p class="text-xs text-slate-600">Place of Supply: <span id="prev-place" class="font-semibold text-slate-800"></span></p>
  </div>
  </div>
-
  <div class="overflow-x-auto">
  <table class="w-full text-left border-collapse min-w-[500px]">
  <thead>
@@ -593,7 +570,6 @@
  <tbody id="prev-items-tbody" class="divide-y divide-slate-100 text-xs"></tbody>
  </table>
  </div>
-
  <div class="flex justify-end pt-2">
  <div class="w-full sm:w-72 space-y-2 text-xs">
  <div class="flex justify-between py-1 border-b border-slate-100">
@@ -622,32 +598,37 @@
  </div>
  </div>
  </div>
-
  <div class="space-y-4 pt-4 border-t border-slate-200">
  <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
  <p class="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Amount in Words:</p>
  <p id="prev-in-words" class="text-xs font-semibold text-indigo-900 italic"></p>
+ </div>
+ <div id="prev-material-container">
+ <p class="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Material Specifications:</p>
+ <p id="prev-material-specs" class="text-xs text-slate-900 font-bold whitespace-pre-line"></p>
  </div>
  <div>
  <p class="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Notes & Terms:</p>
  <p id="prev-notes" class="text-xs text-slate-600 whitespace-pre-line"></p>
  </div>
  </div>
-
  <div class="pt-8 flex justify-between items-end">
  <div>
  <p class="text-[10px] text-slate-400">Computer-generated document.</p>
- <p class="text-[9px] text-slate-400 mt-0.5">Easy Invoice — powered by Crafts By Zareen</p>
+
  </div>
  <div class="text-center">
  <div class="h-10 border-b border-slate-400 mb-1 w-32 md:w-40"></div>
  <p id="prev-sign-name" class="text-xs font-bold text-slate-800">Authorized Signatory</p>
  </div>
  </div>
+ <!-- Footer Notes Bottom Block -->
+ <div id="prev-footer-container" class="pt-4 border-t border-dashed border-slate-200 text-center">
+ <p id="prev-footer-notes" class="text-[11px] text-slate-500 whitespace-pre-line font-medium"></p>
  </div>
  </div>
  </div>
-
+ </div>
  <!-- ================= PAGE 6: DOCUMENT LIST ================= -->
  <div id="page-documents" class="space-y-4 page-section hidden max-w-5xl mx-auto">
  <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex flex-col md:flex-row justify-between items-center gap-3">
@@ -674,7 +655,6 @@
  </select>
  </div>
  </div>
-
  <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden p-3 md:p-0">
  <div class="hidden md:block overflow-x-auto">
  <table class="w-full text-left border-collapse">
@@ -697,9 +677,7 @@
  </div>
  </div>
  </div>
-
  </main>
-
  <!-- Persistent Global Footer -->
  <footer class="bg-white border-t border-slate-200 py-4 mt-auto">
  <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
@@ -707,7 +685,6 @@
  <span class="font-medium text-indigo-600">powered by Crafts By Zareen</span>
  </div>
  </footer>
-
  <!-- Application Script -->
  <script>
  let currentSection = 'home';
@@ -715,18 +692,16 @@
  let activeDocType = 'INVOICE';
  let editingDocId = null;
  let currentUserId = '';
- let companyProfile = { name: '', pan: '', gstin: '', phone: '', address: '', bank: '', logo: '' };
+ let companyProfile = { name: '', pan: '', gstin: '', phone: '', address: '', bank: '', materialSpecs: '', footerNotes: '', logo: '' };
  let savedClients = [];
  let documentItems = [];
  let savedDocuments = [];
-
  window.onload = function() {
  initUserIdentity();
  loadCompanyProfile();
  loadSavedClients();
  loadSavedDocuments();
  };
-
  // Generate or load temporary unique browser identity
  function initUserIdentity() {
  let userId = localStorage.getItem('easyinvoice_user_id');
@@ -736,14 +711,12 @@
  }
  currentUserId = userId;
  }
-
  function copyUserId() {
  const input = document.getElementById('display-user-id');
  input.select();
  navigator.clipboard.writeText(input.value);
  alert('Browser Identity ID copied to clipboard!');
  }
-
  function router(section) {
  document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
  if (section === 'home') {
@@ -770,12 +743,10 @@
  currentSection = section;
  window.scrollTo(0, 0);
  }
-
  function loadCompanyProfile() {
  const stored = localStorage.getItem(`easyinvoice_${currentUserId}_profile`) || localStorage.getItem('easyinvoice_profile');
  if (stored) companyProfile = JSON.parse(stored);
  }
-
  function loadSavedClients() {
  const stored = localStorage.getItem(`easyinvoice_${currentUserId}_clients`) || localStorage.getItem('easyinvoice_clients');
  if (stored) {
@@ -788,15 +759,12 @@
  localStorage.setItem(`easyinvoice_${currentUserId}_clients`, JSON.stringify(savedClients));
  }
  }
-
  function renderClientDirectory() {
  const query = (document.getElementById('client-search-directory').value || '').toLowerCase();
  const container = document.getElementById('client-directory-container');
  container.innerHTML = '';
-
  const filtered = savedClients.filter(c => c.name.toLowerCase().includes(query) || (c.mobile && c.mobile.toLowerCase().includes(query)) || (c.email && c.email.toLowerCase().includes(query)) || (c.gstin && c.gstin.toLowerCase().includes(query)));
  document.getElementById('no-clients-msg').classList.toggle('hidden', filtered.length > 0);
-
  filtered.forEach(cli => {
  const card = document.createElement('div');
  card.className = 'bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3';
@@ -822,7 +790,6 @@
  container.appendChild(card);
  });
  }
-
  function openClientModal(id = null) {
  document.getElementById('client-modal').classList.remove('hidden');
  if (id) {
@@ -846,11 +813,9 @@
  document.getElementById('client-modal-title').innerText = 'Add New Client';
  }
  }
-
  function closeClientModal() {
  document.getElementById('client-modal').classList.add('hidden');
  }
-
  function saveClientFromModal() {
  const id = document.getElementById('modal-client-id').value;
  const name = document.getElementById('modal-client-name').value.trim();
@@ -858,12 +823,10 @@
  const email = document.getElementById('modal-client-email').value.trim();
  const address = document.getElementById('modal-client-address').value.trim();
  const gstin = document.getElementById('modal-client-gstin').value.trim().toUpperCase();
-
  if (!name) {
  alert('Client name is required.');
  return;
  }
-
  if (id) {
  const idx = savedClients.findIndex(c => c.id === id);
  if (idx >= 0) {
@@ -873,12 +836,10 @@
  const newClient = { id: 'CLI-' + Date.now(), name, mobile, email, address, gstin };
  savedClients.unshift(newClient);
  }
-
  localStorage.setItem(`easyinvoice_${currentUserId}_clients`, JSON.stringify(savedClients));
  closeClientModal();
  renderClientDirectory();
  }
-
  function deleteClient(id) {
  if (confirm('Are you sure you want to delete this client?')) {
  savedClients = savedClients.filter(c => c.id !== id);
@@ -886,7 +847,6 @@
  renderClientDirectory();
  }
  }
-
  function handleClientNameInput() {
  const query = document.getElementById('client-name').value.trim().toLowerCase();
  const dropdown = document.getElementById('client-dropdown-results');
@@ -895,7 +855,6 @@
  dropdown.classList.add('hidden');
  return;
  }
-
  const matches = savedClients.filter(c => c.name.toLowerCase().includes(query));
  if (matches.length > 0) {
  dropdown.innerHTML = '';
@@ -911,7 +870,6 @@
  dropdown.classList.add('hidden');
  }
  }
-
  function selectClient(client) {
  document.getElementById('client-name').value = client.name;
  document.getElementById('client-mobile').value = client.mobile || '';
@@ -920,7 +878,6 @@
  document.getElementById('client-gstin').value = client.gstin || '';
  document.getElementById('client-dropdown-results').classList.add('hidden');
  }
-
  function populateProfilePage() {
  document.getElementById('profile-name').value = companyProfile.name || '';
  document.getElementById('profile-pan').value = companyProfile.pan || '';
@@ -928,13 +885,14 @@
  document.getElementById('profile-phone').value = companyProfile.phone || '';
  document.getElementById('profile-address').value = companyProfile.address || '';
  document.getElementById('profile-bank').value = companyProfile.bank || '';
+ document.getElementById('profile-material-specs').value = companyProfile.materialSpecs || '';
+ document.getElementById('profile-footer-notes').value = companyProfile.footerNotes || '';
  if (companyProfile.logo) {
  document.getElementById('profile-logo-preview').innerHTML = `<img src="${companyProfile.logo}" class="w-full h-full object-contain">`;
  } else {
  document.getElementById('profile-logo-preview').innerHTML = `<i class="fa-solid fa-image text-slate-300 text-2xl"></i>`;
  }
  }
-
  function handleLogoUpload(event) {
  const file = event.target.files[0];
  if (file) {
@@ -946,7 +904,6 @@
  reader.readAsDataURL(file);
  }
  }
-
  function saveProfile() {
  companyProfile.name = document.getElementById('profile-name').value;
  companyProfile.pan = document.getElementById('profile-pan').value;
@@ -954,12 +911,12 @@
  companyProfile.phone = document.getElementById('profile-phone').value;
  companyProfile.address = document.getElementById('profile-address').value;
  companyProfile.bank = document.getElementById('profile-bank').value;
-
+ companyProfile.materialSpecs = document.getElementById('profile-material-specs').value;
+ companyProfile.footerNotes = document.getElementById('profile-footer-notes').value;
  localStorage.setItem(`easyinvoice_${currentUserId}_profile`, JSON.stringify(companyProfile));
  alert('Company profile saved successfully!');
  router('settings');
  }
-
  function exportData() {
  const dataToExport = { userId: currentUserId, profile: companyProfile, clients: savedClients, documents: savedDocuments, exportedAt: new Date().toISOString() };
  const blob = new Blob([JSON.stringify(dataToExport, null, 2)], { type: 'application/json' });
@@ -970,7 +927,6 @@
  a.click();
  URL.revokeObjectURL(url);
  }
-
  function importData(event) {
  const file = event.target.files[0];
  if (!file) return;
@@ -1003,11 +959,9 @@
  };
  reader.readAsText(file);
  }
-
  function startNewDocument(type, existingData = null) {
  activeDocType = type;
  editingDocId = existingData ? existingData.id : null;
-
  if (existingData) {
  document.getElementById('doc-number').value = existingData.docNumber;
  document.getElementById('doc-date').value = existingData.date;
@@ -1024,6 +978,8 @@
  document.getElementById('tax-rate-1').value = existingData.taxRate1;
  document.getElementById('tax-rate-2').value = existingData.taxRate2;
  document.getElementById('doc-notes').value = existingData.notes || companyProfile.bank;
+ document.getElementById('doc-material-specs').value = existingData.materialSpecs !== undefined ? existingData.materialSpecs : (companyProfile.materialSpecs || '');
+ document.getElementById('doc-footer-notes').value = existingData.footerNotes !== undefined ? existingData.footerNotes : (companyProfile.footerNotes || '');
  documentItems = JSON.parse(JSON.stringify(existingData.items));
  } else {
  const prefix = type === 'INVOICE' ? 'INV' : 'QT';
@@ -1042,21 +998,20 @@
  document.getElementById('tax-rate-1').value = 9;
  document.getElementById('tax-rate-2').value = 9;
  document.getElementById('doc-notes').value = companyProfile.bank || '';
+ document.getElementById('doc-material-specs').value = companyProfile.materialSpecs || '';
+ document.getElementById('doc-footer-notes').value = companyProfile.footerNotes || '';
  documentItems = [{ desc: 'Professional Services', item: 'Consultation', rate: 5000, unit: 'Hrs', qty: 2 }];
  }
-
  currentWizardStep = 1;
  document.getElementById('wizard-doc-badge').innerText = type;
  document.getElementById('wizard-title').innerText = existingData ? `Edit ${type}` : `Create New ${type}`;
  router('wizard');
  }
-
  function cancelWizard() {
  if (confirm('Are you sure you want to cancel? Any unsaved changes will be lost.')) {
  router('home');
  }
  }
-
  function changeWizardStep(direction) {
  if (direction === 1) {
  if (currentWizardStep === 1 && !document.getElementById('client-name').value.trim()) {
@@ -1073,11 +1028,9 @@
  if (currentWizardStep > 3) currentWizardStep = 3;
  renderWizardStep();
  }
-
  function renderWizardStep() {
  document.querySelectorAll('.wizard-step').forEach(el => el.classList.add('hidden'));
  document.getElementById(`wizard-step-${currentWizardStep}`).classList.remove('hidden');
-
  for (let i = 1; i <= 3; i++) {
  const ind = document.getElementById(`step-indicator-${i}`);
  if (i < currentWizardStep) {
@@ -1091,29 +1044,24 @@
  ind.innerText = i;
  }
  }
-
  document.getElementById('btn-prev').classList.toggle('hidden', currentWizardStep === 1);
  document.getElementById('btn-next').classList.toggle('hidden', currentWizardStep === 3);
  document.getElementById('btn-save').classList.toggle('hidden', currentWizardStep !== 3);
  document.getElementById('btn-preview-screen').classList.toggle('hidden', currentWizardStep !== 3);
-
  if (currentWizardStep === 2) {
  renderItemRows();
  } else if (currentWizardStep === 3) {
  calculateTotals();
  }
  }
-
  function addItemRow() {
  documentItems.push({ desc: '', item: '', rate: 0, unit: 'Nos', qty: 1 });
  renderItemRows();
  }
-
  function removeItemRow(index) {
  documentItems.splice(index, 1);
  renderItemRows();
  }
-
  function renderItemRows() {
  const container = document.getElementById('items-container');
  container.innerHTML = '';
@@ -1159,24 +1107,20 @@
  container.appendChild(row);
  });
  }
-
  function updateRowTotal(idx) {
  const it = documentItems[idx];
  const total = (it.rate || 0) * (it.qty || 0);
  const el = document.getElementById(`item-total-${idx}`);
  if (el) el.innerText = `₹${total.toFixed(2)}`;
  }
-
  function calculateTotals() {
  let subtotal = documentItems.reduce((acc, curr) => acc + ((curr.rate || 0) * (curr.qty || 0)), 0);
  let discPct = parseFloat(document.getElementById('discount-pct').value) || 0;
  let discount = (subtotal * discPct) / 100;
  let taxable = subtotal - discount;
-
  let taxType = document.getElementById('tax-type').value;
  let taxRate1 = parseFloat(document.getElementById('tax-rate-1').value) || 0;
  let taxRate2 = parseFloat(document.getElementById('tax-rate-2').value) || 0;
-
  let tax1 = 0, tax2 = 0;
  if (taxType === 'CGST_SGST') {
  document.getElementById('tax-rate-container').style.display = 'grid';
@@ -1201,10 +1145,8 @@
  document.getElementById('row-summary-tax1').style.display = 'none';
  document.getElementById('row-summary-tax2').style.display = 'none';
  }
-
  let shipping = parseFloat(document.getElementById('shipping-fee').value) || 0;
  let grandTotal = taxable + tax1 + tax2 + shipping;
-
  document.getElementById('summary-subtotal').innerText = `₹${subtotal.toFixed(2)}`;
  document.getElementById('summary-discount').innerText = `-₹${discount.toFixed(2)}`;
  document.getElementById('summary-tax1').innerText = `₹${tax1.toFixed(2)}`;
@@ -1212,10 +1154,8 @@
  document.getElementById('summary-shipping').innerText = `₹${shipping.toFixed(2)}`;
  document.getElementById('summary-grand-total').innerText = `₹${grandTotal.toFixed(2)}`;
  document.getElementById('summary-in-words').innerText = `INR ${toWords(grandTotal)} Only`;
-
  return { subtotal, discount, tax1, tax2, shipping, grandTotal };
  }
-
  function gatherDocumentData() {
  const totals = calculateTotals();
  return {
@@ -1237,14 +1177,14 @@
  taxRate1: parseFloat(document.getElementById('tax-rate-1').value) || 0,
  taxRate2: parseFloat(document.getElementById('tax-rate-2').value) || 0,
  notes: document.getElementById('doc-notes').value,
+ materialSpecs: document.getElementById('doc-material-specs').value,
+ footerNotes: document.getElementById('doc-footer-notes').value,
  ...totals
  };
  }
-
  function saveDocument() {
  const docData = gatherDocumentData();
  
- // Automatically save/update client if new or modified
  const cName = docData.clientName.trim();
  const existingClient = savedClients.find(c => c.name.toLowerCase() === cName.toLowerCase());
  if (!existingClient && cName) {
@@ -1262,7 +1202,6 @@
  if (docData.clientEmail && !existingClient.email) existingClient.email = docData.clientEmail;
  localStorage.setItem(`easyinvoice_${currentUserId}_clients`, JSON.stringify(savedClients));
  }
-
  const index = savedDocuments.findIndex(d => d.id === docData.id);
  if (index >= 0) {
  savedDocuments[index] = docData;
@@ -1273,14 +1212,11 @@
  alert(`${activeDocType} saved successfully!`);
  router('documents');
  }
-
  function openA4Preview() {
  router('preview');
  }
-
  function populateA4Preview() {
  const data = gatherDocumentData();
-
  if (companyProfile.logo) {
  document.getElementById('preview-logo-box').classList.remove('hidden');
  document.getElementById('preview-logo-img').src = companyProfile.logo;
@@ -1288,13 +1224,11 @@
  document.getElementById('prev-firm-name').innerText = companyProfile.name || 'Your Firm Name';
  document.getElementById('prev-firm-address').innerText = companyProfile.address || '';
  document.getElementById('prev-firm-tax').innerText = `PAN: ${companyProfile.pan || 'N/A'} | GSTIN: ${companyProfile.gstin || 'N/A'}`;
-
  document.getElementById('prev-doc-title').innerText = data.type;
  document.getElementById('prev-doc-number').innerText = data.docNumber;
  document.getElementById('prev-doc-date').innerText = data.date;
  document.getElementById('prev-doc-due').innerText = data.dueDate;
  document.getElementById('prev-due-box').style.display = data.type === 'INVOICE' ? 'block' : 'none';
-
  document.getElementById('prev-client-name').innerText = data.clientName;
  
  const contactParts = [];
@@ -1302,11 +1236,9 @@
  if (data.clientEmail) contactParts.push(`Email: ${data.clientEmail}`);
  document.getElementById('prev-client-contact').innerText = contactParts.join(' | ');
  document.getElementById('prev-client-contact').style.display = contactParts.length > 0 ? 'block' : 'none';
-
  document.getElementById('prev-client-address').innerText = data.clientAddress;
  document.getElementById('prev-client-gst').innerText = data.clientGstin ? `GSTIN: ${data.clientGstin}` : '';
  document.getElementById('prev-place').innerText = data.placeOfSupply;
-
  const tbody = document.getElementById('prev-items-tbody');
  tbody.innerHTML = '';
  data.items.forEach((it, idx) => {
@@ -1320,11 +1252,9 @@
  `;
  tbody.appendChild(tr);
  });
-
  document.getElementById('prev-subtotal').innerText = `₹${data.subtotal.toFixed(2)}`;
  document.getElementById('prev-discount').innerText = `-₹${data.discount.toFixed(2)}`;
  document.getElementById('prev-disc-row').style.display = data.discount > 0 ? 'flex' : 'none';
-
  if (data.taxType === 'CGST_SGST') {
  document.getElementById('prev-tax1-row').style.display = 'flex';
  document.getElementById('prev-tax2-row').style.display = 'flex';
@@ -1341,27 +1271,29 @@
  document.getElementById('prev-tax1-row').style.display = 'none';
  document.getElementById('prev-tax2-row').style.display = 'none';
  }
-
  document.getElementById('prev-ship-row').style.display = data.shipping > 0 ? 'flex' : 'none';
  document.getElementById('prev-shipping').innerText = `₹${data.shipping.toFixed(2)}`;
  document.getElementById('prev-grand-total').innerText = `₹${data.grandTotal.toFixed(2)}`;
  document.getElementById('prev-in-words').innerText = `INR ${toWords(data.grandTotal)} Only`;
+ 
+ const matSpecs = data.materialSpecs || '';
+ document.getElementById('prev-material-specs').innerText = matSpecs;
+ document.getElementById('prev-material-container').style.display = matSpecs.trim() ? 'block' : 'none';
  document.getElementById('prev-notes').innerText = data.notes;
  document.getElementById('prev-sign-name').innerText = companyProfile.name || 'Authorized Signatory';
+
+ const footerNotes = data.footerNotes || '';
+ document.getElementById('prev-footer-notes').innerText = footerNotes;
+ document.getElementById('prev-footer-container').style.display = footerNotes.trim() ? 'block' : 'none';
  }
-
  function printDocument() { window.print(); }
-
  function downloadAsImage() {
  const element = document.getElementById('printable-area');
  if (!element) return;
-
  const originalWidth = element.style.width;
  const originalMaxWidth = element.style.maxWidth;
-
  element.style.width = '794px';
  element.style.maxWidth = 'none';
-
  html2canvas(element, { 
  scale: 2,
  useCORS: true,
@@ -1378,32 +1310,25 @@
  element.style.maxWidth = originalMaxWidth;
  });
  }
-
  function loadSavedDocuments() {
  const stored = localStorage.getItem(`easyinvoice_${currentUserId}_documents`) || localStorage.getItem('easyinvoice_documents');
  if (stored) savedDocuments = JSON.parse(stored);
  }
-
  function renderDocumentList() {
  const query = (document.getElementById('doc-search-input').value || '').toLowerCase();
  const filterType = document.getElementById('doc-filter-type').value;
-
  const tbody = document.getElementById('document-table-tbody');
  const cardContainer = document.getElementById('document-cards-container');
  tbody.innerHTML = '';
  cardContainer.innerHTML = '';
-
  const filtered = savedDocuments.filter(d => {
  const matchQuery = d.clientName.toLowerCase().includes(query) || d.docNumber.toLowerCase().includes(query);
  const matchType = filterType === 'ALL' || d.type === filterType;
  return matchQuery && matchType;
  });
-
  document.getElementById('no-documents-msg').classList.toggle('hidden', filtered.length > 0);
-
  filtered.forEach(doc => {
  const badgeColor = doc.type === 'INVOICE' ? 'bg-indigo-100 text-indigo-700' : 'bg-amber-100 text-amber-700';
-
  const tr = document.createElement('tr');
  tr.className = 'hover:bg-slate-50 transition';
  tr.innerHTML = `
@@ -1416,13 +1341,13 @@
  <td class="p-4 font-bold text-indigo-600">₹${doc.grandTotal.toFixed(2)}</td>
  <td class="p-4 text-right space-x-1">
  ${doc.type === 'QUOTATION' ? `<button onclick="convertToInvoice('${doc.id}')" title="Convert to Invoice" class="p-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-600 rounded-lg"><i class="fa-solid fa-right-left"></i></button>` : ''}
+ <button onclick="duplicateDocument('${doc.id}')" title="Duplicate" class="p-2 bg-amber-50 hover:bg-amber-100 text-amber-600 rounded-lg"><i class="fa-solid fa-copy"></i></button>
  <button onclick="editDocument('${doc.id}')" title="Edit" class="p-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 rounded-lg"><i class="fa-solid fa-pen"></i></button>
  <button onclick="previewSavedDocument('${doc.id}')" title="Preview" class="p-2 bg-violet-50 hover:bg-violet-100 text-violet-600 rounded-lg"><i class="fa-solid fa-eye"></i></button>
  <button onclick="deleteDocument('${doc.id}')" title="Delete" class="p-2 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg"><i class="fa-solid fa-trash"></i></button>
  </td>
  `;
  tbody.appendChild(tr);
-
  const card = document.createElement('div');
  card.className = 'bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3';
  card.innerHTML = `
@@ -1439,6 +1364,7 @@
  </div>
  <div class="flex justify-end items-center space-x-2 pt-2 border-t border-slate-200">
  ${doc.type === 'QUOTATION' ? `<button onclick="convertToInvoice('${doc.id}')" class="px-3 py-1.5 bg-emerald-600 text-white rounded-lg text-xs font-semibold flex items-center space-x-1"><i class="fa-solid fa-right-left"></i><span>Convert</span></button>` : ''}
+ <button onclick="duplicateDocument('${doc.id}')" class="px-3 py-1.5 bg-amber-600 text-white rounded-lg text-xs font-semibold flex items-center space-x-1"><i class="fa-solid fa-copy"></i><span>Duplicate</span></button>
  <button onclick="editDocument('${doc.id}')" class="px-3 py-1.5 bg-indigo-600 text-white rounded-lg text-xs font-semibold flex items-center space-x-1"><i class="fa-solid fa-pen"></i><span>Edit</span></button>
  <button onclick="previewSavedDocument('${doc.id}')" class="px-3 py-1.5 bg-violet-600 text-white rounded-lg text-xs font-semibold flex items-center space-x-1"><i class="fa-solid fa-eye"></i><span>View</span></button>
  <button onclick="deleteDocument('${doc.id}')" class="p-1.5 bg-rose-100 text-rose-600 rounded-lg"><i class="fa-solid fa-trash"></i></button>
@@ -1447,12 +1373,20 @@
  cardContainer.appendChild(card);
  });
  }
-
+ function duplicateDocument(id) {
+ const doc = savedDocuments.find(d => d.id === id);
+ if (doc) {
+ let duplicated = JSON.parse(JSON.stringify(doc));
+ duplicated.id = 'DOC-' + Date.now();
+ const prefix = duplicated.type === 'INVOICE' ? 'INV' : 'QT';
+ duplicated.docNumber = `${prefix}-${Math.floor(1000 + Math.random() * 9000)}`;
+ startNewDocument(duplicated.type, duplicated);
+ }
+ }
  function editDocument(id) {
  const doc = savedDocuments.find(d => d.id === id);
  if (doc) startNewDocument(doc.type, doc);
  }
-
  function previewSavedDocument(id) {
  const doc = savedDocuments.find(d => d.id === id);
  if (doc) {
@@ -1460,7 +1394,6 @@
  router('preview');
  }
  }
-
  function convertToInvoice(id) {
  const doc = savedDocuments.find(d => d.id === id);
  if (doc) {
@@ -1471,7 +1404,6 @@
  startNewDocument('INVOICE', newDoc);
  }
  }
-
  function deleteDocument(id) {
  if (confirm('Are you sure you want to delete this document?')) {
  savedDocuments = savedDocuments.filter(d => d.id !== id);
@@ -1479,12 +1411,10 @@
  renderDocumentList();
  }
  }
-
  function toWords(num) {
  if (num === 0) return 'Zero';
  const a = ['', 'One ', 'Two ', 'Three ', 'Four ', 'Five ', 'Six ', 'Seven ', 'Eight ', 'Nine ', 'Ten ', 'Eleven ', 'Twelve ', 'Thirteen ', 'Fourteen ', 'Fifteen ', 'Sixteen ', 'Seventeen ', 'Eighteen ', 'Nineteen '];
  const b = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
-
  function numToWords(n) {
  if ((n = n.toString()).length > 9) return 'overflow';
  let nArray = ('000000000' + n).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
@@ -1497,11 +1427,9 @@
  str += (parseInt(nArray[5]) !== 0) ? ((str !== '') ? 'and ' : '') + (a[Number(nArray[5])] || b[nArray[5][0]] + ' ' + a[nArray[5][1]]) : '';
  return str.trim();
  }
-
  let parts = num.toFixed(2).split('.');
  let whole = parseInt(parts[0]);
  let decimal = parseInt(parts[1]);
-
  let result = numToWords(whole);
  if (decimal > 0) result += ` and ${numToWords(decimal)} Paise`;
  return result;
