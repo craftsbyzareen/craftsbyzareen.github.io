@@ -49,16 +49,7 @@
         </h1>
         <p class="text-xs text-slate-500">Measure room dimensions in feet & inches, calculate square footage/meters, and export pristine tabular reports.</p>
       </div>
-      <div class="flex items-center gap-2 w-full sm:w-auto">
-        <button onclick="downloadAsImage()" class="flex-1 sm:flex-none px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition flex items-center justify-center gap-2 text-sm shadow-sm">
-          <i class="fa-solid fa-file-image"></i>
-          <span>Image</span>
-        </button>
-        <button onclick="window.print()" class="flex-1 sm:flex-none px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-semibold transition flex items-center justify-center gap-2 text-sm shadow-sm">
-          <i class="fa-solid fa-print"></i>
-          <span>Print / PDF</span>
-        </button>
-      </div>
+     
     </div>
 
     <div id="printable-area" class="bg-white p-4 sm:p-6 md:p-10 rounded-3xl shadow-xl border border-slate-200 space-y-6">
@@ -142,6 +133,17 @@
       <div id="export-notes-display" class="hidden space-y-1 pt-2">
         <h5 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Notes:</h5>
         <p id="print-notes-text" class="text-xs text-slate-700 whitespace-pre-line"></p>
+      </div>
+	  
+	   <div class="flex items-center gap-2 w-full sm:w-auto">
+        <button onclick="downloadAsImage()" class="flex-1 sm:flex-none px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition flex items-center justify-center gap-2 text-sm shadow-sm">
+          <i class="fa-solid fa-file-image"></i>
+          <span>Image</span>
+        </button>
+        <button onclick="window.print()" class="flex-1 sm:flex-none px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-semibold transition flex items-center justify-center gap-2 text-sm shadow-sm">
+          <i class="fa-solid fa-print"></i>
+          <span>Print / PDF</span>
+        </button>
       </div>
 
       <!-- Footer Signature -->
