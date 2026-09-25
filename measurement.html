@@ -77,7 +77,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100 no-print">
         <div class="relative">
           <label class="block text-xs font-bold text-slate-700 mb-1">Select / Search Client</label>
-          <input type="text" id="client-search" placeholder="Type client name..." oninput="handleClientSearch()" class="w-full px-3.5 py-2.5 bg-white border rounded-xl text-sm outline-none focus:ring-2 focus:ring-amber-500" autocomplete="off">
+          <input type="text" id="client-search" placeholder="Type client name..." oninput="handleClientSearch()" class="w-full px-3.5 py-2.5 bg-white border rounded-xl text-sm outline-none focus:ring-2 focus:ring-amber-500" autocomplete="off" onfocus="this.select()">
           <div id="client-dropdown" class="absolute left-0 right-0 top-full mt-1 bg-white border border-slate-200 rounded-xl shadow-lg max-h-40 overflow-y-auto z-30 hidden"></div>
         </div>
         <div>
@@ -137,7 +137,7 @@
 
       <div class="space-y-2 pt-2 no-print">
         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Additional Description / Notes</label>
-        <textarea id="measurement-notes" rows="3" placeholder="Enter any extra notes or specifications regarding measurements..." class="w-full px-3.5 py-2.5 border rounded-2xl text-xs outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+        <textarea id="measurement-notes" rows="3" placeholder="Enter any extra notes or specifications regarding measurements..." class="w-full px-3.5 py-2.5 border rounded-2xl text-xs outline-none focus:ring-2 focus:ring-amber-500" onfocus="this.select()"></textarea>
       </div>
       <div id="export-notes-display" class="hidden space-y-1 pt-2">
         <h5 class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Notes:</h5>
@@ -242,7 +242,7 @@
     }
 
     function addMeasurementRow() {
-      measurementRows.push({ name: 'Room ' + (measurementRows.length + 1), lenFt: 0, lenIn: 0, widFt: 0, widIn: 0 });
+      measurementRows.push({ name: 'Room ' + (measurementRows.length + 1), lenFt: '', lenIn: '', widFt: '', widIn: '' });
       renderRows();
     }
 
@@ -282,7 +282,7 @@
           <div class="flex items-center justify-between gap-2">
             <div class="flex items-center gap-2 flex-grow">
               <span class="w-6 h-6 rounded-full bg-amber-500 text-white font-bold text-xs flex items-center justify-center shrink-0">${idx + 1}</span>
-              <input type="text" value="${row.name}" oninput="measurementRows[${idx}].name = this.value; updateTableLive();" placeholder="Room Name (e.g. Kitchen)" class="w-full px-3 py-1.5 border rounded-xl bg-white outline-none text-xs font-bold text-slate-800">
+              <input type="text" value="${row.name}" oninput="measurementRows[${idx}].name = this.value; updateTableLive();" placeholder="Room Name (e.g. Kitchen)" class="w-full px-3 py-1.5 border rounded-xl bg-white outline-none text-xs font-bold text-slate-800" onfocus="this.select()">
             </div>
             <button onclick="removeMeasurementRow(${idx})" class="p-2 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-xl transition shrink-0" title="Remove Room">
               <i class="fa-solid fa-trash text-xs"></i>
@@ -294,11 +294,11 @@
               <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Length</label>
               <div class="flex items-center gap-1.5">
                 <div class="flex items-center gap-1 flex-1">
-                  <input type="number" value="${row.lenFt}" min="0" oninput="measurementRows[${idx}].lenFt = parseFloat(this.value) || 0; updateMeasurementLive(${idx});" class="w-full px-2 py-1.5 border rounded-lg bg-slate-50 text-center outline-none text-xs" placeholder="0">
+                  <input type="text" inputmode="decimal" value="${row.lenFt}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); measurementRows[${idx}].lenFt = this.value === '' ? '' : parseFloat(this.value) || 0; updateMeasurementLive(${idx});" class="w-full px-2 py-1.5 border rounded-lg bg-slate-50 text-center outline-none text-xs" onfocus="this.select()">
                   <span class="text-slate-400 text-xs">ft</span>
                 </div>
                 <div class="flex items-center gap-1 flex-1">
-                  <input type="number" value="${row.lenIn}" min="0" max="11" oninput="measurementRows[${idx}].lenIn = parseFloat(this.value) || 0; updateMeasurementLive(${idx});" class="w-full px-2 py-1.5 border rounded-lg bg-slate-50 text-center outline-none text-xs" placeholder="0">
+                  <input type="text" inputmode="numeric" value="${row.lenIn}" oninput="this.value = this.value.replace(/[^0-9]/g, ''); measurementRows[${idx}].lenIn = this.value === '' ? '' : parseFloat(this.value) || 0; updateMeasurementLive(${idx});" class="w-full px-2 py-1.5 border rounded-lg bg-slate-50 text-center outline-none text-xs" onfocus="this.select()">
                   <span class="text-slate-400 text-xs">in</span>
                 </div>
               </div>
@@ -308,11 +308,11 @@
               <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Width</label>
               <div class="flex items-center gap-1.5">
                 <div class="flex items-center gap-1 flex-1">
-                  <input type="number" value="${row.widFt}" min="0" oninput="measurementRows[${idx}].widFt = parseFloat(this.value) || 0; updateMeasurementLive(${idx});" class="w-full px-2 py-1.5 border rounded-lg bg-slate-50 text-center outline-none text-xs" placeholder="0">
+                  <input type="text" inputmode="decimal" value="${row.widFt}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); measurementRows[${idx}].widFt = this.value === '' ? '' : parseFloat(this.value) || 0; updateMeasurementLive(${idx});" class="w-full px-2 py-1.5 border rounded-lg bg-slate-50 text-center outline-none text-xs" onfocus="this.select()">
                   <span class="text-slate-400 text-xs">ft</span>
                 </div>
                 <div class="flex items-center gap-1 flex-1">
-                  <input type="number" value="${row.widIn}" min="0" max="11" oninput="measurementRows[${idx}].widIn = parseFloat(this.value) || 0; updateMeasurementLive(${idx});" class="w-full px-2 py-1.5 border rounded-lg bg-slate-50 text-center outline-none text-xs" placeholder="0">
+                  <input type="text" inputmode="numeric" value="${row.widIn}" oninput="this.value = this.value.replace(/[^0-9]/g, ''); measurementRows[${idx}].widIn = this.value === '' ? '' : parseFloat(this.value) || 0; updateMeasurementLive(${idx});" class="w-full px-2 py-1.5 border rounded-lg bg-slate-50 text-center outline-none text-xs" onfocus="this.select()">
                   <span class="text-slate-400 text-xs">in</span>
                 </div>
               </div>
